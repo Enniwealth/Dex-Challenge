@@ -11,56 +11,38 @@ Foundry consists of:
 
 ## Documentation
 
-https://book.getfoundry.sh/
+Dex 1 
 
-## Usage
+The goal of this level is for you to hack the basic DEX contract below and steal the funds by price manipulation.
 
-### Build
+You will start with 10 tokens of token1 and 10 of token2. The DEX contract starts with 100 of each token.
 
-```shell
-$ forge build
-```
+You will be successful in this level if you manage to drain all of at least 1 of the 2 tokens from the contract, and allow the contract to report a "bad" price of the assets.
 
-### Test
+ 
 
-```shell
-$ forge test
-```
+Quick note
+Normally, when you make a swap with an ERC20 token, you have to approve the contract to spend your tokens for you. To keep with the syntax of the game, we've just added the approve method to the contract itself. So feel free to use contract.approve(contract.address, <uint amount>) instead of calling the tokens directly, and it will automatically approve spending the two tokens by the desired amount. Feel free to ignore the SwappableToken contract otherwise.
 
-### Format
+  Things that might help:
 
-```shell
-$ forge fmt
-```
+How is the price of the token calculated?
+How does the swap method work?
+How do you approve a transaction of an ERC20?
+Theres more than one way to interact with a contract!
+Remix might help
+What does "At Address" do?
 
-### Gas Snapshots
 
-```shell
-$ forge snapshot
-```
+Dex - 2
 
-### Anvil
 
-```shell
-$ anvil
-```
+This level will ask you to break DexTwo, a subtlely modified Dex contract from the previous level, in a different way.
 
-### Deploy
+You need to drain all balances of token1 and token2 from the DexTwo contract to succeed in this level.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+You will still start with 10 tokens of token1 and 10 of token2. The DEX contract still starts with 100 of each token.
 
-### Cast
+  Things that might help:
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+How has the swap method been modified?

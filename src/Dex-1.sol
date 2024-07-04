@@ -10,8 +10,7 @@ contract Dex is Ownable {
     address public token1;
     address public token2;
 
-    constructor() Ownable(msg.sender) {
-
+    constructor(address  initialOwner) Ownable( initialOwner) {
     }
 
     function setTokens(address _token1, address _token2) public onlyOwner {
